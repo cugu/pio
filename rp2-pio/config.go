@@ -188,7 +188,7 @@ func (cfg *StateMachineConfig) SetMovStatus(statusSel MovStatus, statusN uint32)
 }
 
 func checkPinBaseAndCount(base machine.Pin, count uint8) {
-	if base >= 32 {
+	if base >= 48 {
 		panic("pio:bad pin")
 	} else if count > 32 {
 		panic("pio:count too large")

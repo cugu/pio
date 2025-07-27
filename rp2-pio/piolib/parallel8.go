@@ -23,7 +23,7 @@ const noDMA uint32 = 0xffff_ffff
 func NewParallel8Tx(sm pio.StateMachine, wr, dStart machine.Pin, baud uint32) (*Parallel8Tx, error) {
 	sm.TryClaim() // SM should be claimed beforehand, we just guarantee it's claimed.
 	const nPins = 8
-	if dStart+nPins > 31 {
+	if dStart+nPins > 47 {
 		return nil, errors.New("invalid D0..D7 pin range")
 	}
 	baud *= 6 // ??? why 6?
